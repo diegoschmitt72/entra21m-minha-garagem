@@ -7,23 +7,33 @@ import java.sql.Date;
  * @author (Diego Schmitt , 08-07-2017)
  */
 public class Carro {
-    private int id,renavam;
+    private int id;
 
     
-    private short anoFabricacao,anoLancamento,tipoPneu;
+    private short anoFabricacao,anoLancamento;
+
+
+    public void setTipoPneu(String tipoPneu) {
+        this.tipoPneu = tipoPneu;
+    }
     private byte quantidadePortas,quantidadeBatidas;
-    private String nome,cor,fabricante,placa,chassi,descricao;
+    private String nome,cor,fabricante,placa,chassi,descricao,renavam,tipoPneu;
     private float quilometragem,potencia;
     private Date dataCompra;
     private boolean estaFuncional,permitidaCirculacao;
-    
-    public int getRenavam() {
+
+    public String getTipoPneu() {
+        return tipoPneu;
+    }
+    public String getRenavam() {
         return renavam;
     }
 
-    public void setRenavam(int renavam) {
+    public void setRenavam(String renavam) {
         this.renavam = renavam;
     }
+    
+    
     public String getDescricao() {
         return descricao;
     }
@@ -53,14 +63,6 @@ public class Carro {
 
     public void setAnoLancamento(short anoLancamento) {
         this.anoLancamento = anoLancamento;
-    }
-
-    public short getTipoPneu() {
-        return tipoPneu;
-    }
-
-    public void setTipoPneu(short tipoPneu) {
-        this.tipoPneu = tipoPneu;
     }
 
     public String getNome() {
@@ -95,11 +97,11 @@ public class Carro {
         this.placa = placa;
     }
 
-    public int getRenavan() {
+    public String getRenavan() {
         return renavam;
     }
 
-    public void setRenavan(int renavan) {
+    public void setRenavan(String renavan) {
         this.renavam = renavan;
     }
 

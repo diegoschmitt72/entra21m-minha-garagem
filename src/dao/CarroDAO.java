@@ -36,7 +36,7 @@ public class CarroDAO {
                 while (resultSet.next()) {
                     Carro carro = new Carro();
                     carro.setId(resultSet.getInt("id"));
-                    carro.setRenavan(resultSet.getInt("renavam"));
+                    carro.setRenavan(resultSet.getString("renavam"));
 
                     carro.setNome(resultSet.getString("Nome"));
                     carro.setCor(resultSet.getString("Cor"));
@@ -46,7 +46,7 @@ public class CarroDAO {
 
                     carro.setAnoFabricacao(resultSet.getShort("ano_fabricacao"));
                     carro.setAnoLancamento(resultSet.getShort("ano_lancamento"));
-                    carro.setTipoPneu(resultSet.getShort("tipo_pneu"));
+                    carro.setTipoPneu(resultSet.getString("tipo_pneu"));
 
                     carro.setQuilometragem(resultSet.getFloat("quilometragem"));
                     carro.setPotencia(resultSet.getFloat("potencia"));
@@ -98,8 +98,8 @@ public class CarroDAO {
                 preparador.setByte(12, carro.getQuantidadeBatidas());
                 preparador.setShort(13, carro.getAnoFabricacao());
                 preparador.setShort(14, carro.getAnoLancamento());
-                preparador.setShort(15, carro.getTipoPneu());
-                preparador.setInt(16, carro.getRenavam());
+                preparador.setString(15, carro.getTipoPneu());
+                preparador.setString(16, carro.getRenavam());
                 preparador.setString(17, carro.getDescricao());
                 preparador.execute();
                 ResultSet resultado = preparador.getGeneratedKeys();
@@ -157,8 +157,8 @@ public class CarroDAO {
             substituidor.setByte(12, carro.getQuantidadeBatidas());
             substituidor.setShort(13, carro.getAnoFabricacao());
             substituidor.setShort(14, carro.getAnoLancamento());
-            substituidor.setShort(15, carro.getTipoPneu());
-            substituidor.setInt(16, carro.getRenavam());
+            substituidor.setString(15, carro.getTipoPneu());
+            substituidor.setString(16, carro.getRenavam());
             substituidor.setString(17, carro.getDescricao());
             substituidor.setInt(18, carro.getId());
             codigoAlteracao = substituidor.executeUpdate();
@@ -219,7 +219,7 @@ public class CarroDAO {
             if (resultado.next()) {
                 carro = new Carro();
                 carro.setId(resultado.getInt("id"));
-                carro.setRenavan(resultado.getInt("renavam"));
+                carro.setRenavan(resultado.getString("renavam"));
                 carro.setNome(resultado.getString("Nome"));
                 carro.setCor(resultado.getString("Cor"));
                 carro.setFabricante(resultado.getString("Fabricante"));
@@ -227,7 +227,7 @@ public class CarroDAO {
                 carro.setChassi(resultado.getString("Chassi"));
                 carro.setAnoFabricacao(resultado.getShort("ano_fabricacao"));
                 carro.setAnoLancamento(resultado.getShort("ano_lancamento"));
-                carro.setTipoPneu(resultado.getShort("tipo_pneu"));
+                carro.setTipoPneu(resultado.getString("tipo_pneu"));
                 carro.setQuilometragem(resultado.getFloat("quilometragem"));
                 carro.setPotencia(resultado.getFloat("potencia"));
                 carro.setPermitidaCirculacao(resultado.getBoolean("permitida_circulacao"));

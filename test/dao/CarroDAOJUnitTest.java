@@ -30,8 +30,8 @@ public class CarroDAOJUnitTest {
         gol.setQuantidadeBatidas((byte)0);
         gol.setQuantidadePortas((byte)4);
         gol.setQuilometragem(15887f);
-        gol.setTipoPneu((short)17);
-        gol.setRenavam(198745);
+        gol.setTipoPneu("19");
+        gol.setRenavam("198745");
         
         CarroDAO dao = new CarroDAO();
         dao.truncate();
@@ -61,8 +61,8 @@ public class CarroDAOJUnitTest {
         gol.setQuantidadeBatidas((byte)0);
         gol.setQuantidadePortas((byte)4);
         gol.setQuilometragem(15887f);
-        gol.setTipoPneu((short)17);
-        gol.setRenavam(198745);
+        gol.setTipoPneu("19");
+        gol.setRenavam("198745");
         
         CarroDAO dao = new CarroDAO();
         dao.truncate();
@@ -93,8 +93,8 @@ public class CarroDAOJUnitTest {
         gol.setQuantidadeBatidas((byte)0);
         gol.setQuantidadePortas((byte)4);
         gol.setQuilometragem(15887f);
-        gol.setTipoPneu((short)17);
-        gol.setRenavam(198745);
+        gol.setTipoPneu("19");
+        gol.setRenavam("198745");
         
         CarroDAO dao = new CarroDAO();
         dao.truncate();
@@ -116,8 +116,8 @@ public class CarroDAOJUnitTest {
         gol.setQuantidadeBatidas((byte)1);
         gol.setQuantidadePortas((byte)2);
         gol.setQuilometragem(15845f);
-        gol.setTipoPneu((short)19);
-        gol.setRenavam(198845);
+        gol.setTipoPneu("19");
+        gol.setRenavam("198845");
         dao.alterar(gol);
         
         Carro carromodificado = dao.buscarPorId(gol.getId());
