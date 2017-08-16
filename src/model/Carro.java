@@ -7,21 +7,21 @@ import java.sql.Date;
  * @author (Diego Schmitt , 08-07-2017)
  */
 public class Carro {
-    private int id;
+    private int id,quilometragem;
 
     
     private short anoFabricacao,anoLancamento;
 
 
-    public void setTipoPneu(String tipoPneu) {
-        this.tipoPneu = tipoPneu;
-    }
     private byte quantidadePortas,quantidadeBatidas;
     private String nome,cor,fabricante,placa,chassi,descricao,renavam,tipoPneu;
-    private float quilometragem,potencia;
+    private float potencia;
     private Date dataCompra;
     private boolean estaFuncional,permitidaCirculacao;
 
+    public void setTipoPneu(String tipoPneu) {
+        this.tipoPneu = tipoPneu;
+    }
     public String getTipoPneu() {
         return tipoPneu;
     }
@@ -113,11 +113,11 @@ public class Carro {
         this.chassi = chassi;
     }
 
-    public float getQuilometragem() {
+    public int getQuilometragem() {
         return quilometragem;
     }
 
-    public void setQuilometragem(float quilometragem) {
+    public void setQuilometragem(int quilometragem) {
         this.quilometragem = quilometragem;
     }
 

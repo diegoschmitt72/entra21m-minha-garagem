@@ -1,5 +1,5 @@
 # Apagar o banco de dados
-DROP DATABASE IF EXISTS minha_garagem;
+# DROP DATABASE IF EXISTS minha_garagem;
 
 # Criar o baco de dados
 CREATE DATABASE IF NOT EXISTS minha_garagem;
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS carros (
     ano_lancamento SMALLINT,
     tipo_pneu SMALLINT,
     
-    renavam INT,
+    renavam VARCHAR(100),
    
      descricao TEXT
 );

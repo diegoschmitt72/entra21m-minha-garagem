@@ -48,7 +48,7 @@ public class CarroDAO {
                     carro.setAnoLancamento(resultSet.getShort("ano_lancamento"));
                     carro.setTipoPneu(resultSet.getString("tipo_pneu"));
 
-                    carro.setQuilometragem(resultSet.getFloat("quilometragem"));
+                    carro.setQuilometragem(resultSet.getInt("quilometragem"));
                     carro.setPotencia(resultSet.getFloat("potencia"));
 
                     carro.setEstaFuncional(resultSet.getBoolean("permitida_circulacao"));
@@ -80,7 +80,7 @@ public class CarroDAO {
             sql += "potencia, data_compra, esta_funcionando, ";
             sql += "permitida_circulacao, quantidade_portas, ";
             sql += "quantidade_batidas ,ano_fabricacao, ano_lancamento, ";
-            sql += "tipo_pneu, renavam, descricao)VALUE(";
+            sql += "tipo_pneu, renavam, descricao) VALUE (";
             sql += "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             try {
                 PreparedStatement preparador = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
@@ -228,7 +228,7 @@ public class CarroDAO {
                 carro.setAnoFabricacao(resultado.getShort("ano_fabricacao"));
                 carro.setAnoLancamento(resultado.getShort("ano_lancamento"));
                 carro.setTipoPneu(resultado.getString("tipo_pneu"));
-                carro.setQuilometragem(resultado.getFloat("quilometragem"));
+                carro.setQuilometragem(resultado.getInt("quilometragem"));
                 carro.setPotencia(resultado.getFloat("potencia"));
                 carro.setPermitidaCirculacao(resultado.getBoolean("permitida_circulacao"));
                 carro.setEstaFuncional(resultado.getBoolean("esta_funcionando"));

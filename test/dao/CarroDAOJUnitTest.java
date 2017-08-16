@@ -29,7 +29,7 @@ public class CarroDAOJUnitTest {
         gol.setPermitidaCirculacao(true);
         gol.setQuantidadeBatidas((byte)0);
         gol.setQuantidadePortas((byte)4);
-        gol.setQuilometragem(15887f);
+        gol.setQuilometragem(15887);
         gol.setTipoPneu("19");
         gol.setRenavam("198745");
         
@@ -60,7 +60,7 @@ public class CarroDAOJUnitTest {
         gol.setPermitidaCirculacao(true);
         gol.setQuantidadeBatidas((byte)0);
         gol.setQuantidadePortas((byte)4);
-        gol.setQuilometragem(15887f);
+        gol.setQuilometragem(15887);
         gol.setTipoPneu("19");
         gol.setRenavam("198745");
         
@@ -92,7 +92,7 @@ public class CarroDAOJUnitTest {
         gol.setPermitidaCirculacao(true);
         gol.setQuantidadeBatidas((byte)0);
         gol.setQuantidadePortas((byte)4);
-        gol.setQuilometragem(15887f);
+        gol.setQuilometragem(15887);
         gol.setTipoPneu("19");
         gol.setRenavam("198745");
         
@@ -115,7 +115,7 @@ public class CarroDAOJUnitTest {
         gol.setPermitidaCirculacao(false);
         gol.setQuantidadeBatidas((byte)1);
         gol.setQuantidadePortas((byte)2);
-        gol.setQuilometragem(15845f);
+        gol.setQuilometragem(15845);
         gol.setTipoPneu("19");
         gol.setRenavam("198845");
         dao.alterar(gol);
