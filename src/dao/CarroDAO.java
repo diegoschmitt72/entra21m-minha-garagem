@@ -167,7 +167,6 @@ public class CarroDAO {
             System.exit(0);
         } finally {
             Conexao.desconectar();
-
         }
 
         return codigoAlteracao;
@@ -210,7 +209,6 @@ public class CarroDAO {
         sql += "renavam,descricao ";
         sql += "FROM carros ";
         sql += "WHERE id = ?";
-
         try {
             PreparedStatement botador = Conexao.conectar().prepareStatement(sql);
             botador.setInt(1, id);
@@ -237,13 +235,10 @@ public class CarroDAO {
                 carro.setDataCompra(resultado.getDate("data_compra"));
                 carro.setDescricao(resultado.getString("descricao"));
             }
-
         } catch (SQLException abc) {
             JOptionPane.showMessageDialog(null, abc.getMessage());
             System.exit(0);
         }
-
         return carro;
-
     }
 }
