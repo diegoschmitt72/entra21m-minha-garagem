@@ -72,6 +72,7 @@ public class JFrameListaCategorias extends javax.swing.JFrame {
             jTableCategorias.getColumnModel().getColumn(2).setResizable(false);
             jTableCategorias.getColumnModel().getColumn(2).setHeaderValue("Status");
         }
+        popularLista();
 
         jButtonCadastrar.setBackground(new java.awt.Color(255, 255, 51));
         jButtonCadastrar.setForeground(new java.awt.Color(0, 0, 0));
