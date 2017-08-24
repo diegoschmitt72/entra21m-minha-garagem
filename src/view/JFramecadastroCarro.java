@@ -85,7 +85,8 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabelId.setText("Codigo");
 
@@ -169,6 +170,11 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldQuilometragem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldQuilometragemActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Tipo de Pneu");
 
@@ -402,6 +408,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
@@ -437,7 +444,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
             meuCarro.setId(Integer.parseInt(jLabelCodigo.getText()));
             int codigo = dao.alterar(meuCarro);
             if (codigo != Utilitarios.NAO_FOI_POSSIVEL_ALTERAR) {
-                JOptionPane.showMessageDialog(null, "CAlteração Realizada com sucesso Com sucesso");
+                JOptionPane.showMessageDialog(null, "Alteração Realizada com sucesso Com sucesso");
                 jLabelCodigo.setText(String.valueOf(codigo));
             } else {
                 JOptionPane.showMessageDialog(null, "Não foi possivel alterar o Cadastro");
@@ -464,6 +471,10 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
     private void jComboBoxFabricanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFabricanteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxFabricanteActionPerformed
+
+    private void jFormattedTextFieldQuilometragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldQuilometragemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldQuilometragemActionPerformed
 
     /**
      * @param args the command line arguments
