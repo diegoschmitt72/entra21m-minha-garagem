@@ -18,8 +18,8 @@ public class CategoriaDAO {
 
     public int inserir(Categoria categoria) {
         int codigoInserido = Utilitarios.NAO_FOI_POSSIVEL_INSERIR;
-        String sql = "INSERT INTO categorias (nome, descricao)";
-        sql += "\nVALUE (?,?)";
+        String sql = "INSERT INTO categorias (nome, descricao, ativo)";
+        sql += "\nVALUE (?,?,?)";
         try {
             /*
             * Classe Utilizada para criar o sql substituido a interrogação
@@ -31,6 +31,7 @@ public class CategoriaDAO {
             // substitui as interrogações
             ps.setString(1, categoria.getNome());
             ps.setString(2, categoria.getDescricao());
+            ps.setBoolean(3, categoria.isAtivo());
             // executa o comando no Banco de Dados
             ps.execute();
             
@@ -55,13 +56,15 @@ public class CategoriaDAO {
         int codigoAlterado = Utilitarios.NAO_FOI_POSSIVEL_ALTERAR;
         String sql = "UPDATE categorias SET";
         sql += "\nnome = ?,";
-        sql += "\ndescricao = ?";
+        sql += "\ndescricao = ?,";
+        sql += "\nativo = ?";
         sql += "\n WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
             ps.setString(1, categoria.getNome());
             ps.setString(2, categoria.getDescricao());
-            ps.setInt(1, categoria.getId());
+            ps.setBoolean(3, categoria.isAtivo());
+            ps.setInt(4, categoria.getId());
             codigoAlterado = ps.executeUpdate();
         }catch (SQLException sqle){
             JOptionPane.showMessageDialog(null, sqle.getMessage(), "Erro ao alterar CategoriaDAO",JOptionPane.ERROR_MESSAGE );
@@ -89,7 +92,7 @@ public class CategoriaDAO {
 
     public ArrayList<Categoria> retornarListagemCategorias() {
         ArrayList<Categoria> categorias = new ArrayList<>();
-        String sql = "SELECT id, nome, descricao, ativo" + "\nFROM categorias";
+        String sql = "SELECT id, nome, descricao, ativo FROM categorias";
         try{
             Statement stmt = Conexao.conectar().createStatement();
             stmt.execute(sql);
@@ -113,7 +116,7 @@ public class CategoriaDAO {
     public Categoria buscarCategoriaPorId(int codigo) {
         Categoria categoria = null;
         String sql = "SELECT nome, descricao, ativo FROM categorias";
-        sql += "WHERE id = ?";
+        sql += "\nWHERE id = ?";
         try{
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
             ps.setInt(1, codigo);
