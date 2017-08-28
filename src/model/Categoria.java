@@ -41,4 +41,11 @@ public class Categoria {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+
+    @Override
+    public String toString() {
+        return  nome;
+    }
+    
+    
 }

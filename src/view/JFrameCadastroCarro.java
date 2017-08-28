@@ -15,12 +15,12 @@ import model.Carro;
  *
  * @author Alunos
  */
-public class JFramecadastroCarro extends javax.swing.JFrame {
+public class JFrameCadastroCarro extends javax.swing.JFrame {
 
     /**
      * Creates new form JFramecadastroCarro
      */
-    public JFramecadastroCarro() {
+    public JFrameCadastroCarro() {
         initComponents();
     }
 
@@ -511,20 +511,21 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFramecadastroCarro().setVisible(true);
+                new JFrameCadastroCarro().setVisible(true);
             }
         });
     }

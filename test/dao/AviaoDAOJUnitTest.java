@@ -15,15 +15,9 @@ import static org.junit.Assert.*;
 public class AviaoDAOJUnitTest {
     
     @Test
-    public void inserir(){
-       
-    }
-    
-    
-    
+    public void inserir(){}
     @Test
     public void alterar(){}
-
     @Test
     public void excluir(){}
     

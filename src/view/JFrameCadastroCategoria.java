@@ -72,6 +72,7 @@ public class JFrameCadastroCategoria extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabelCodigo.setText("Id");
 
