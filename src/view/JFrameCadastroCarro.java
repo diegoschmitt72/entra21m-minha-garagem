@@ -15,12 +15,12 @@ import model.Carro;
  *
  * @author Alunos
  */
-public class JFramecadastroCarro extends javax.swing.JFrame {
+public class JFrameCadastroCarro extends javax.swing.JFrame {
 
     /**
      * Creates new form JFramecadastroCarro
      */
-    public JFramecadastroCarro() {
+    public JFrameCadastroCarro() {
         initComponents();
     }
 
@@ -85,7 +85,8 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabelId.setText("Codigo");
 
@@ -169,6 +170,11 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldQuilometragem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldQuilometragemActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Tipo de Pneu");
 
@@ -414,6 +420,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
@@ -449,7 +456,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
             meuCarro.setId(Integer.parseInt(jLabelCodigo.getText()));
             int codigo = dao.alterar(meuCarro);
             if (codigo != Utilitarios.NAO_FOI_POSSIVEL_ALTERAR) {
-                JOptionPane.showMessageDialog(null, "CAlteração Realizada com sucesso Com sucesso");
+                JOptionPane.showMessageDialog(null, "Alteração Realizada com sucesso Com sucesso");
                 jLabelCodigo.setText(String.valueOf(codigo));
             } else {
                 JOptionPane.showMessageDialog(null, "Não foi possivel alterar o Cadastro");
@@ -477,9 +484,15 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxFabricanteActionPerformed
 
+
+    private void jFormattedTextFieldQuilometragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldQuilometragemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldQuilometragemActionPerformed
+
     private void jFormattedTextFieldRenavamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldRenavamActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextFieldRenavamActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -498,20 +511,21 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFramecadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCadastroCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFramecadastroCarro().setVisible(true);
+                new JFrameCadastroCarro().setVisible(true);
             }
         });
     }
